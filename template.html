@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Siet para apresentação dos conceitos de front-end">
+    <meta name="author" descrition="João Augusto">
+    <meta name="keywords" description="JavaScript, HTML5, CSS3, sêmantica, mobile- first, responsividade">
     <link rel="stylesheet" href="/index.css">
+    <link rel="shortcut icon" href="/img/logo.png">
     <title>MeuFrontEnd</title>
 </head>
 
@@ -13,13 +17,16 @@
     <!-- WRAP -->
     <div id="wrap">
 
+        <!-- Âncora para o topo dsa página-->
         <a id="top"></a>
 
         <!-- Cabeçalho -->
-        <header style="background-color: rgb(60, 224, 230);">
-            <a href="/">
-                <img src="/img/logo.png" alt="Logotipo de FrontEnd.">
-            </a>
+        <header>
+
+            <!-- Usando uma imagem como logotipo. -->
+            <!-- <a href="/"><img src="/img/logo.alfa.png" alt="Logotipo de FrontEnd."></a> -->
+            <!-- Usando Font Awesome como logotipo. -->
+            <a href="/"><i class="fa-solid fa-laptop-code"></i></a>
             <h1>
                 FrontEnd
                 <small>Programando o Futuro</small>
@@ -27,19 +34,28 @@
         </header>
 
         <!-- Menu -->
-        <nav style="background-color: rgb(38, 136, 139);">
-            <a href="/">
-                <i class="fa-solid fa-house fa-fw"></i>
-                <span>Início</span>
-            </a>
-            <a href="/Contacts">
-                <i class="fa-solid fa-headset fa-fw"></i>
-                <span>Contatos</span>
-            </a>
-            <a href="/about">
-                <i class="fa-solid fa-circle-info fa-fw"></i>
-                <span>Sobre</span>
-            </a>
+
+        <!--  eu joão tirei essa opção <nav style="background-color: rgb(87, 187, 190);"> -->
+
+        <!--Item de menu-->
+        <a href="/">
+
+            <!-- Ícone do item de menu-->
+            <i class="fa-solid fa-house fa-fw"></i>
+
+            <!-- Label do item de menu-->
+            <span>Início</span>
+        </a>
+
+        <!-- Os outros itens seguem o mesmo padrão acima -->
+        <a href="/Contacts">
+            <i class="fa-solid fa-headset fa-fw"></i>
+            <span>Contatos</span>
+        </a>
+        <a href="/about">
+            <i class="fa-solid fa-circle-info fa-fw"></i>
+            <span>Sobre</span>
+        </a>
         </nav>
 
         <!-- Conteúdo principal -->
@@ -54,7 +70,7 @@
                     obcaecati expedita provident, nisi quaerat!</p>
             </article>
 
-            <!-- Conteúdo adicional -->
+            <!-- Conteúdo adicional / Barra lateral -->
             <aside>
                 <h3>Lateral</h3>
                 <p>ipsum dolor sit amet consectetur adipisicing elit. Voluptatem mollitia officiis, in blanditiis
@@ -66,7 +82,7 @@
         <!-- Rodapé -->
         <footer>
 
-            <!-- Primeira Linha-->
+            <!-- Primeira Linha do rodapé-->
             <div class="footer-top">
                 <a href="/">
                     <i class="fa-solid fa-house fa-fw"></i>
@@ -77,7 +93,7 @@
                 </a>
             </div>
 
-            <!-- Segunda Linha -->
+            <!-- Segunda Linha do rodapé-->
             <div class="footer-bottom">
 
                 <div class="footer-bottom-left">
@@ -102,7 +118,7 @@
                             </a>
                         </li>
                     </ul>
-                    
+
                 </div>
 
                 <div class="footer-bottom-right">
@@ -139,8 +155,10 @@
     </div>
     <!-- Fim do WRAP -->
 
+    <!--Carga do JavaScript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="/index.js"></script>
 
 </body>
+
 </html>
