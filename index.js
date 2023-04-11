@@ -42,7 +42,20 @@ function myApp() {
      * Posteriormente, esta chamada à "loadpage()" será otimizada para melhorar
      * o paradigma "SEO Friendly" do aplicativo.
      **/
-    loadpage('home')
+    /**loadpage('home')
+    
+    
+        /**
+          * Obtém nome da página que está sendo acessada, do 'localStorage'.
+          * Estude '/404.html' para mais detalhes.
+          **/
+    const path = localStorage.path
+    if (path) {                        // Se cliente está acessando uma página específica...
+        delete localStorage.path       // Limpa o 'localStorage'.
+        loadpage(path);                // Acessa a página solicitada.
+    } else {                           // Se não solicitou uma página específica...
+        loadpage('home');              // Carrega a página inicial.
+    }
 
     /**
      * jQuery Monitora cliques e elementos '<a>' que, se ocorre, chama a função
@@ -58,7 +71,7 @@ function routerLink() {
 
     // Obtém o valrodo atributo 'href' do elemento clicado.
     var href = $(this).attr('href').trim().toLowerCase()
-   
+
 
     // Detecta clique em links externos e âncoras (#).
     if (
@@ -187,24 +200,21 @@ function loadpage(page) {
             console.error(error)
         })
 
-        /**
-    * Rola a tela para o início, útil para links no final da página.
-    * Referências:
-    *  • https://www.w3schools.com/jsref/met_win_scrollto.asp
-    **/
-window.scrollTo(0, 0);
+    /**
+* Rola a tela para o início, útil para links no final da página.
+* Referências:
+*  • https://www.w3schools.com/jsref/met_win_scrollto.asp
+**/
+    window.scrollTo(0, 0);
 
-/**
- * Atualiza URL da página com o endereço da rota:
- * Referências:
- *  • https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
- **/
-window.history.pushState({}, '', page);
-
+    /**
+     * Atualiza URL da página com o endereço da rota:
+     * Referências:
+     *  • https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
+     **/
+    window.history.pushState({}, '', page);
 
 }
-
-
 
 /**
  * Muda o título da página → <title></title>
