@@ -1,12 +1,33 @@
+/**
+ * FrontEndeiros 1.0
+ * MIT License 2023 By Luferat
+ **/
 
+/**
+ * 
+ * JavaScript do aplicativo.
+ * Depende de "jQuery" (https://jquery.com/).
+ *
+ * OBS 1: Este é o aplicativo principal, para que o tema (template) do site
+ * opere. Posteriormente, quando necessário, cada página (conteúdo) terá seu
+ * próprio JavaScript, assim, somente o JavaScript necessário será carregado.
+ *
+ * OBS 2: Todas as instruções que iniciam com um cifrão ($) são da biblioteca
+ * jQuery, ou seja, não são JavaScript "puro" (ou vanilla 😉).
+ *
+ * Para saber mais:
+ *  • https://www.w3schools.com/js/
+ *  • https://www.w3schools.com/jsref/
+ *  • https://www.w3schools.com/jquery/
+ **/
 
 /**
  * Algumas configurações do aplicativo.
  * Dica: você pode acrescentar novas configurações aqui se precisar.
- */
-var app = {
-    siteName: 'FrontEnd',
-    siteSlogan: 'Programando o Futuro'
+ **/
+ var app = {
+    siteName: 'Futikeiros',
+    siteSlogan: 'Programando para o futuro'
 }
 
 /**
@@ -35,58 +56,76 @@ $(document).ready(myApp)
 function myApp() {
 
     /**
-     * Faz a carga da página inicial do SPA. A página a ser carregada na 
-     * inicialização é definida pela string parâmetro e corresponde a uma
-     * das subpastas de "/pages".
-     * 
-     * Posteriormente, esta chamada à "loadpage()" será otimizada para melhorar
-     * o paradigma "SEO Friendly" do aplicativo.
+     * IMPORTANTE!
+     * Para que o roteamento funcione corretamente no "live server", é 
+     * necessário que erros 404 abram a página "index.html".
      **/
-    /**loadpage('home')
-    
-    
-        /**
-          * Obtém nome da página que está sendo acessada, do 'localStorage'.
-          * Estude '/404.html' para mais detalhes.
-          **/
-    const path = localStorage.path
-    if (path) {                        // Se cliente está acessando uma página específica...
-        delete localStorage.path       // Limpa o 'localStorage'.
-        loadpage(path);                // Acessa a página solicitada.
-    } else {                           // Se não solicitou uma página específica...
-        loadpage('home');              // Carrega a página inicial.
-    }
+
+    // Extrai a rota da página da URL e armazena em 'path'.
+    var path = window.location.pathname.split('/')[1]
+
+    // Se 'path' é vazia, 'path' é a página inicial.
+    if (path == '') path = 'home'
+
+    // Carrega a página solicitada pela rota em 'path'.
+    loadpage(path)
 
     /**
-     * jQuery Monitora cliques e elementos '<a>' que, se ocorre, chama a função
-     * routeLink().
-     */
+     * jQuery → Monitora cliques em elementos '<a>' que , se ocorre, chama a função 
+     * routerLink().
+     **/
     $(document).on('click', 'a', routerLink)
+
 }
 
 /**
  * Função que processa o clique em um link.
- */
+ **/
 function routerLink() {
 
-    // Obtém o valrodo atributo 'href' do elemento clicado.
+    /**
+     * Extrai o valor do atributo "href" do elemento clicado e armazena na 
+     * variável "href".
+     * 
+     * OBS: $(this) faz referência especificamente ao elemento que foi clicado.
+     * 
+     * Referências:
+     *  • https://api.jquery.com/attr/
+     *  • https://www.w3schools.com/jquery/jquery_syntax.asp
+     **/
     var href = $(this).attr('href').trim().toLowerCase()
 
-
-    // Detecta clique em links externos e âncoras (#).
+    /**
+     * Se clicou em um link externo (http://... OU https://...) ou em uma 
+     * âncora (#...),devolve o controle da página para o navegador (return true) 
+     * que fará o processamento normal.
+     * 
+     * OBS: Os carateres '||' (pipe pipe) significam a lógica 'OR' (OU) onde, se 
+     * apenas uma das expressões for verdadeira, todas as expressões serão 
+     * verdadeiras. Consulte as referências.
+     * 
+     * Referências:
+     *  • https://www.w3schools.com/js/js_if_else.asp
+     *  • https://www.w3schools.com/jsref/jsref_substr.asp
+     *  • https://www.w3schools.com/js/js_comparisons.asp
+     **/
     if (
         href.substring(0, 7) == 'http://' ||
         href.substring(0, 8) == 'https://' ||
         href.substring(0, 1) == '#'
-    ) {
+    )
         // Devolve o controle para o HTML.
         return true
-    }
 
-    // Exibe a página da rota clicada.
+    /**
+     * Carrega a rota solicitada.
+     **/
     loadpage(href)
 
-    // Bloqueia o funcionamento normal do link.
+    /**
+     * Encerra o processamento do link sem fazer mais nada. 'return false' 
+     * bloqueia a ação normal do navegador sobre um link.
+     **/
     return false
 }
 
@@ -111,7 +150,7 @@ function routerLink() {
  *  5. Já para carregar esta página no SPA pelo JavaScript, comandamos 
  *     "loadpage('mypage')", por exemplo.
  **/
-function loadpage(page) {
+function loadpage(page, updateURL = true) {
 
     /*
      * Monta os caminhos (path) para os componentes da página solicitada, 
@@ -161,50 +200,32 @@ function loadpage(page) {
          **/
         .done((data) => {
 
-            /**
-             * jQuery → Carrega o CSS da página solicitada na "index.html"
-             * principal.
-             **/
-            $('#pageCSS').attr('href', path.css)
+            // Se o documento carregado NÃO é uma página de conteúdo...
+            if (data.trim().substring(0, 9) != '<article>')
 
-            /**
-             * jQuery → Obtém os dados da requisição, no caso, o conteúdo do 
-             * componente HTML da página e o exibe no elemento SPA → <main>.
-             **/
-            $('main').html(data)
+                // Carrega a página de erro 404 sem atualizar a rota.
+                loadpage('e404', false)
 
-            /**
-             * jQuery → Obtém o código JavaScript da página, carrega na memória
-             * e "executa".
-             **/
-            $.getScript(path.js)
+            // Se o documento é uma página de conteúdo...
+            else {
 
-        })
+                // jQuery - Instala o CSS da página na 'index.html'.
+                $('#pageCSS').attr('href', path.css)
 
-        /**
-         * Caso o "request" falhe, por conta de o documento solicitado não 
-         * existir, carrega a página de erro "e404" ('/pages/e404') no SPA.
-         **/
-        .fail((error) => {
+                // jQuery - Carrega o HTML no elemento <main></main>.
+                $('main').html(data)
 
-            /**
-             * Carrega a página de erro 404 no SPA.
-             */
-            loadpage('e404')
+                // jQuery - Carrega e executa o JavaScript.
+                $.getScript(path.js)
+            }
 
-            /**
-             * Exibe a mensagem de erro que ocorreu no console, para depuração.
-             * Opcionalmente, esta linha poderá/deverá ser removida no momento
-             * do deploy (publicação) da versão final.
-             */
-            console.error(error)
         })
 
     /**
-* Rola a tela para o início, útil para links no final da página.
-* Referências:
-*  • https://www.w3schools.com/jsref/met_win_scrollto.asp
-**/
+    * Rola a tela para o início, útil para links no final da página.
+    * Referências:
+    *  • https://www.w3schools.com/jsref/met_win_scrollto.asp
+    **/
     window.scrollTo(0, 0);
 
     /**
@@ -212,7 +233,7 @@ function loadpage(page) {
      * Referências:
      *  • https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
      **/
-    window.history.pushState({}, '', page);
+    if (updateURL) window.history.pushState({}, '', page);
 
 }
 
@@ -223,19 +244,33 @@ function loadpage(page) {
  * Em cada arquivo "index.js" de cada página, inclua uma chamada para esta 
  * função, passando como parâmetro o título que deve aparecer.
  * 
- * Quando o parâmetro estiver vazio o título será:
+ * Quando o parâmetro estiver vazio (DEFAULT) o título será:
  *  • app.sitename - app.siteslogan
  * Quando o parâmetro for informado, o título será:
  *  • app.sitename - parâmetro
  * 
- */
+ **/
 function changeTitle(title = '') {
 
+    /**
+     * Define o título padrão da página.
+     */
     let pageTitle = app.siteName + ' - '
 
+    /**
+     * Se não foi definido um título para a página, 
+     * usa o slogan.
+     **/
     if (title == '') pageTitle += app.siteSlogan
+
+    /**
+     * Se foi definido um título, usa-o.
+     */
     else pageTitle += title
 
+    /**
+     * Escreve o novo título na tag <title></title>.
+     */
     $('title').html(pageTitle)
 
 }
