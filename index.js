@@ -27,7 +27,8 @@
  **/
  var app = {
     siteName: 'FrontEnd',
-    siteSlogan: 'Programando o futuro'
+    siteSlogan: 'Programando o futuro',
+    apiContactsURL: 'http://localhost:3000/contacts'
 }
 
 /**

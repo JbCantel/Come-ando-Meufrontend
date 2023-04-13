@@ -4,11 +4,11 @@ $(document).ready(myContacts)
  * Função principal da página "contacts".
  */
 
-function myContacts(){
+function myContacts() {
     /**
      * Altera o título da página contacts
      */
-    changeTitle ('Faça contato')
+    changeTitle('Faça contato')
 
     $(document).on('submit', '#cForm', sendContact)
 
@@ -20,17 +20,24 @@ function sendContact(ev) {
 
     const formData = new FormData(ev.target);
 
-    for (const [key, value] of formData) {
+
+    formData.forEach((value, key) => {
         formJSON[key] = value
-    }
-    
-    // Gera o JSON a ser enviado para a API.
-    formJSON = JSON.stringify(formJSON)
+    })
 
-    console.log(formJSON)
-    
-    // console.log(JSON.parse(formJSON))
+    $.post('http://localhost:3000/contacts', formJSON)
+    .done((data) => {
+        if(data.status == 'success') {
+            var firstName = formJSON.name.split(' ')[0]
+            var feedback = `
+                <h3>Olá ${firstName}!</h3>
+                <p>Seu contato foi enviado com sucesso.</p>
+                <p>Obrigado...</p>
+            `
+            $('#cForm').html(feedback)
+            }
+        })
 
- return false
+    return false
 
 }
