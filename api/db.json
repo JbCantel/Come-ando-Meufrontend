@@ -18,6 +18,7 @@
       "email": "joca@silva.com",
       "photo": "https://randomuser.me/api/portraits/men/3.jpg",
       "bio": "Programador, escultor, pintor, contornador e executor",
+      "birth" : "1998-10-04",
       "social": "",
       "type": "author",
       "status": "on"
@@ -29,6 +30,7 @@
       "email": "mari@cleuza.com.br",
       "photo": "https://randomuser.me/api/portraits/women/23.jpg",
       "bio": "Biografa, stenografa, fotografa e farofa",
+      "birth": "2001-08-28",
       "social": "",
       "type": "user",
       "status": "on"
@@ -39,6 +41,7 @@
       "email": "hermesoro@gmail.com",
       "photo": "https://randomuser.me/api/portraits/men/26.jpg",
       "bio": "Cantor, compositor, expositor, dispositor e instrutor.",
+      "birth" : "1984-11-27",
       "social": "",
       "type": "user",
       "status": "on",
@@ -78,6 +81,17 @@
       "views": 0,
       "status": "on",
       "id": 50
+    },
+    {
+      "author": 2,
+      "date": "2023-04-17 20:24:00",
+      "title": "Série B",
+      "thumbnail": "https://picsum.photos/200",
+      "resume": "Palmeiras não tem mundial.",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus justo nibh, sed rutrum neque feugiat ac.",
+      "views": 0,
+      "status": "on",
+      "id": 51
     }
   ],
   "comments": [

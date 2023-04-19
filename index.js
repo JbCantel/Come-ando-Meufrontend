@@ -25,12 +25,17 @@
  * Algumas configurações do aplicativo.
  * Dica: você pode acrescentar novas configurações aqui se precisar.
  **/
- var app = {
-    siteName: 'FrontEnd',
-    siteSlogan: 'Programando o futuro',
-    apiContactsURL: 'http://localhost:3000/contacts',
-    apiArticlesURL: 'http://localhost:3000/articles?_sort=date&_order=desc'
+var apiBaseURL = 'http://localhost:3000/'
+var app = {
+    siteName: 'FrontEndeiros',
+    siteSlogan: 'Programando para o futuro',
+    apiContactsURL: apiBaseURL + 'contacts',
+    apiArticlesURL: apiBaseURL + 'articles?_sort=date&_order=desc',
+    apiArticleURL: apiBaseURL + 'articles/',
+    apiUserURL: apiBaseURL + 'users/'
 }
+
+
 
 /**
  * jQuery → Quando o documento estiver pronto, executa a função principal,
@@ -283,5 +288,34 @@ function changeTitle(title = '') {
      * Escreve o novo título na tag <title></title>.
      */
     $('title').html(pageTitle)
+
+}
+
+/**
+ * Calcula aidade com base na data (system date).
+ */
+function getAge(sysDate) {
+    // Obtendo partes da data atual
+    const today = new Date()
+    const tYear = today.getFullYear()
+    const tMonth = today.getMonth() + 1
+    const tDay = today.getDate()
+
+
+    // Obtendo partes da data original.
+    const parts = sysDate.split('-')
+    const pYear = parts[0]
+    const pMonth = parts[1]
+    const pDay = parts[2]
+
+    //Calcula a idade pelo ano.
+    var age = tYear - pYear
+
+    // Verificar o mês e o dia.
+    if (pMonth > tMonth) age--
+    else if (pMonth == tMonth && pDay > tDay) age--
+
+    //Retorna a idade. 
+    return age
 
 }
