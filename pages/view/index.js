@@ -45,7 +45,7 @@ function myView() {
                 `
 
                     // Obtém todos os artigos deste autor.
-                    $.get(app.apiArticleURL + `?author=${user.id}`)
+                    $.get(app.apiArticleURL + `?author=${user.id}&_limit=5`)
                         .done((uArt) => {
                             authorArts += `<ul>`
                             uArt.forEach((data) => {
