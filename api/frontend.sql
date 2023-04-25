@@ -185,8 +185,8 @@ INSERT INTO articles (
 );
 
 INSERT INTO comments (
-      cmt_author ,
-    cmt_article ,
+     cmt_author,
+    cmt_article,
     cmt_comment
 ) VALUES (
     '1',
@@ -195,11 +195,11 @@ INSERT INTO comments (
 );
 
 INSERT INTO comments (
-      cmt_author ,
-    cmt_article ,
+      cmt_author,
+    cmt_article,
     cmt_comment
 ) VALUES (
-    '4',
+    '1',
     '2',
     'bom demais'
-)
+);
