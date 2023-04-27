@@ -9,6 +9,7 @@ $(document).ready(myHome)
  * Função principal da página "home".
  **/
 function myHome() {
+  
 
     /**
      * Altera o título da página quando 'home' for acessada.
@@ -19,6 +20,7 @@ function myHome() {
      * Quando clicar em um artigo.
      **/
     $(document).on('click', '.art-item', loadArticle)
+    // $('.art-item').click(loadArticle)
 
     var articleList = '';
 
@@ -58,7 +60,7 @@ function myHome() {
  * Carrega o artigo completo.
  */
 function loadArticle() {
-
+    
     // Obtém o id do artigo e armazena na sessão.
     sessionStorage.article = $(this).attr('data-id')
 
