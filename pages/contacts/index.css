@@ -22,8 +22,8 @@
 
 #cForm input,
 #cForm textarea {
-    border: 1px solid red;
-    border-bottom: 3px solid red;
+    border: 1px solid rgb(255, 81, 81);
+    border-bottom: 3px solid rgb(255, 84, 84);
     padding: .4rem;
     width: 100%;
     background-color: rgb(248, 231, 231);
