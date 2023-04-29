@@ -63,29 +63,24 @@ $(document).ready(myApp)
  **/
 function myApp() {
 
-    // Váriavel com dados do usuário logado.
-    var user;
+    //  // Monitora status de autenticação do usuário
+    firebase.auth().onAuthStateChanged((user) => {
 
-    // Se tem usuário logado.
-    if (sessionStorage.userData) {
+        // Se o usuário está logado...
+        if (user) {
 
-        // Dados do usuário logado
-        user = JSON.parse(sessionStorage.userData)
-        $('#navUser').html(`
-            <img src="${user.photo}" alt="${user.name}" referrerpolicy="no-referrer">
-            <span>Perfil</span>
-        `)
-        $('#navUser').attr('href', 'profile')
-    } else {
-        $('#navUser').html(`
-            <i class="fa-solid fa-user fa-fw"></i>
-            <span>Login</span>
-        `)
-        $('#navUser').attr({ 
-            'href': 'home',
-            // 'onclick': 'login()'
-         })
-    }
+            // Mostra a imagem do usuário e o link de perfil.
+            $('#navUser').html(`<img src="${user.photoURL}" alt="${user.displayname}" referrerpolicy="no-referrer"><span>Perfil</span>`)
+            $('#navUser').attr('href', 'profile')
+
+            // Se não tem logados...
+        } else {
+
+            // Mostra o ícone de usuário e o link de login.
+            $('#navUser').html(`<i class="fa-solid fa-user fa-fw"></i><span>Login</span>`)
+            $('#navUser').attr('href', 'login')
+        }
+    });
 
     /**
      * IMPORTANTE!
@@ -115,6 +110,14 @@ function myApp() {
      **/
     $(document).on('click', 'a', routerLink)
 
+}
+
+//Faz login de usuário usando o Firebase Authentication
+function fbLogin() {
+    firebase.auth().signInWithPopup(provider)
+        .then(() => {
+            loadpage('home')
+        })
 }
 
 /**
@@ -157,6 +160,14 @@ function routerLink() {
     )
         // Devolve o controle para o HTML.
         return true
+
+    /**
+     *Se clicou no link para 'login', executa a função login. 
+     */
+    if (href == 'login') {
+        fbLogin()
+        return false
+    }
 
     /**
      * Carrega a rota solicitada.
@@ -261,6 +272,14 @@ function loadpage(page, updateURL = true) {
             }
 
         })
+
+         // Se ocorreu falha em carregar o documento...
+         .catch(() => {
+
+            // Carrega a página de erro 404 sem atualizar a rota.
+            loadpage('e404', false)
+        })
+
 
     /**
     * Rola a tela para o início, útil para links no final da página.
