@@ -32,8 +32,10 @@ var app = {
     apiContactsURL: apiBaseURL + 'contacts',
     apiArticlesURL: apiBaseURL + 'articles?_sort=date&_order=desc',
     apiArticleURL: apiBaseURL + 'articles/',
-    apiUserURL: apiBaseURL + 'users/'
+    apiUserURL: apiBaseURL + 'users/',
+    apiCommentURL: apiBaseURL + 'comments?_sort=date&_order=desc&status=on'
 }
+
 
 
 
