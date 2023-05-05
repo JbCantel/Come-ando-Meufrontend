@@ -92,7 +92,7 @@
       "thumbnail": "https://picsum.photos/200",
       "resume": "Aprenda a fazer alguma coisa que deve ser feita por quem sabe.",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus justo nibh, sed rutrum neque feugiat ac.",
-      "views": 0,
+      "views": "3",
       "status": "on",
       "id": 1
     },
@@ -196,6 +196,61 @@
       "date": "2023-05-04 00:26:26",
       "status": "on",
       "id": 6
+    },
+    {
+      "name": "joao cantel",
+      "photo": "https://lh3.googleusercontent.com/a/AGNmyxYcYlfeTRTauZLVfMQ9Oc_80zVFRnBgO0bL_wPA=s96-c",
+      "email": "joaobcantel10@gmail.com",
+      "uid": "hHI8j0muf9P6ubZzxFcrP951PUu1",
+      "article": "2",
+      "content": "faz um pastel de Flango com o catiolo",
+      "date": "2023-05-04 21:25:26",
+      "status": "on",
+      "id": 7
+    },
+    {
+      "name": "joao cantel",
+      "photo": "https://lh3.googleusercontent.com/a/AGNmyxYcYlfeTRTauZLVfMQ9Oc_80zVFRnBgO0bL_wPA=s96-c",
+      "email": "joaobcantel10@gmail.com",
+      "uid": "hHI8j0muf9P6ubZzxFcrP951PUu1",
+      "article": "3",
+      "content": "gostei XD",
+      "date": "2023-05-04 23:49:24",
+      "status": "on",
+      "id": 8
+    },
+    {
+      "name": "joao cantel",
+      "photo": "https://lh3.googleusercontent.com/a/AGNmyxYcYlfeTRTauZLVfMQ9Oc_80zVFRnBgO0bL_wPA=s96-c",
+      "email": "joaobcantel10@gmail.com",
+      "uid": "hHI8j0muf9P6ubZzxFcrP951PUu1",
+      "article": "1",
+      "content": "deu certo",
+      "date": "2023-05-05 00:06:54",
+      "status": "on",
+      "id": 9
+    },
+    {
+      "name": "joao cantel",
+      "photo": "https://lh3.googleusercontent.com/a/AGNmyxYcYlfeTRTauZLVfMQ9Oc_80zVFRnBgO0bL_wPA=s96-c",
+      "email": "joaobcantel10@gmail.com",
+      "uid": "hHI8j0muf9P6ubZzxFcrP951PUu1",
+      "article": "2",
+      "content": "bom",
+      "date": "2023-05-05 00:31:00",
+      "status": "on",
+      "id": 10
+    },
+    {
+      "name": "joao cantel",
+      "photo": "https://lh3.googleusercontent.com/a/AGNmyxYcYlfeTRTauZLVfMQ9Oc_80zVFRnBgO0bL_wPA=s96-c",
+      "email": "joaobcantel10@gmail.com",
+      "uid": "hHI8j0muf9P6ubZzxFcrP951PUu1",
+      "article": "1",
+      "content": "Comentário fake para testes",
+      "date": "2023-05-05 00:33:25",
+      "status": "on",
+      "id": 11
     }
   ]
 }

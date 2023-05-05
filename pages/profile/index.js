@@ -1,3 +1,8 @@
+/** 
+ * Perfil do usuário
+ * By Cantel
+ * MIT license */ 
+
 $(document).ready(myProfile)
 
 var user, userProfile;

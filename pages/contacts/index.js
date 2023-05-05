@@ -1,6 +1,6 @@
 /**
  * Contacts Control
- * By Luferat
+ * By Cantel
  * MIT License 
  **/
 
