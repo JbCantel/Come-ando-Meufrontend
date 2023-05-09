@@ -44,6 +44,24 @@
       "date": "2023-05-04 00:27:14",
       "status": "received",
       "id": 5
+    },
+    {
+      "name": "jjjjjjjjjjjj",
+      "email": "joca@silvagmail.com",
+      "subject": "fffffffff",
+      "message": "ffafefef",
+      "date": "2023-05-08 22:18:57",
+      "status": "received",
+      "id": 6
+    },
+    {
+      "name": "jjjjjjjjjjjj",
+      "email": "joca@silvagmail.com",
+      "subject": "fffffffff",
+      "message": "oiiii",
+      "date": "2023-05-08 23:17:52",
+      "status": "received",
+      "id": 7
     }
   ],
   "users": [
@@ -56,6 +74,9 @@
       "bio": "Programador, escultor, pintor, contornador e executor",
       "birth": "1998-10-04",
       "social": "",
+      "Facebook": "https://facebook.com/FronsEndeiros/Joca",
+      "Youtube": "https://youtube.com/FronsEndeiros/Joca",
+      "GitHub": "https://github.com/FrontEndeiros/Joca",
       "type": "author",
       "status": "on"
     },
@@ -68,6 +89,9 @@
       "bio": "Biografa, stenografa, fotografa e farofa",
       "birth": "2001-08-28",
       "social": "",
+      "Facebook": "https://facebook.com/FronsEndeiros/Maricleuza",
+      "Youtube": "https://youtube.com/FronsEndeiros/Maricleuza",
+      "GitHub": "https://github.com/FrontEndeiros/Maricleuza",
       "type": "user",
       "status": "on"
     },
@@ -79,6 +103,9 @@
       "bio": "Cantor, compositor, expositor, dispositor e instrutor.",
       "birth": "1984-11-27",
       "social": "",
+      "Facebook": "https://facebook.com/FronsEndeiros/Hermenildo",
+      "Youtube": "https://youtube.com/FronsEndeiros/Hermenildo",
+      "GitHub": "https://github.com/FrontEndeiros/Hermenildo",
       "type": "user",
       "status": "on",
       "id": 3
@@ -92,7 +119,7 @@
       "thumbnail": "https://picsum.photos/200",
       "resume": "Aprenda a fazer alguma coisa que deve ser feita por quem sabe.",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus justo nibh, sed rutrum neque feugiat ac.",
-      "views": "3",
+      "views": "7",
       "status": "on",
       "id": 1
     },
@@ -103,7 +130,7 @@
       "thumbnail": "https://picsum.photos/201",
       "resume": "Desde que se sabe, é assim que é, para sempre ser.",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus justo nibh, sed rutrum neque feugiat ac.",
-      "views": 0,
+      "views": "7",
       "status": "on",
       "id": 2
     },
@@ -114,7 +141,7 @@
       "thumbnail": "https://picsum.photos/203",
       "resume": "Quem é nunca deixa de é.",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus justo nibh, sed rutrum neque feugiat ac.",
-      "views": 0,
+      "views": "2",
       "status": "on",
       "id": 4
     },
@@ -125,7 +152,7 @@
       "thumbnail": "https://picsum.photos/204",
       "resume": "Palmeiras não tem mundial.",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus justo nibh, sed rutrum neque feugiat ac.",
-      "views": 0,
+      "views": "2",
       "status": "on",
       "id": 3
     }
@@ -251,6 +278,17 @@
       "date": "2023-05-05 00:33:25",
       "status": "on",
       "id": 11
+    },
+    {
+      "name": "joao cantel",
+      "photo": "https://lh3.googleusercontent.com/a/AGNmyxYcYlfeTRTauZLVfMQ9Oc_80zVFRnBgO0bL_wPA=s96-c",
+      "email": "joaobcantel10@gmail.com",
+      "uid": "hHI8j0muf9P6ubZzxFcrP951PUu1",
+      "article": "1",
+      "content": "não gostei, asmei",
+      "date": "2023-05-08 23:12:18",
+      "status": "on",
+      "id": 12
     }
   ]
 }

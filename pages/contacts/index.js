@@ -85,7 +85,7 @@ function sendContact(ev) {
     formJSON.status = 'received'
 
     // Envia os dados do formulário para a API.
-    $.post(app.apiContactsURL, formJSON)
+    $.post(app.apiBaseURL + 'contacts', formJSON)
 
         // Ao concluir o envio, armazena o retorno da API em "data".
         .done((data) => {
