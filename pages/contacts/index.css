@@ -7,69 +7,38 @@
     max-width: 500px;
 }
 
-#cForm label {
-    display: block;
-    padding: 0 0 .25rem .25rem;
-}
-
-#cForm input,
-#cForm textarea,
-#cForm button {
-    font-family: inherit;
-    font-size: inherit;
-    border-radius: .3rem;
-}
-
 #cForm input,
 #cForm textarea {
-    border: 1px solid rgb(255, 81, 81);
-    border-bottom: 3px solid rgb(255, 84, 84);
-    padding: .4rem;
-    width: 100%;
-    background-color: rgb(248, 231, 231);
+    border: 1px solid red;
+    border-bottom: 3px solid red;
+    background-color: rgb(255, 230, 230);
 }
 
-#cForm textarea {
-    height: 6rem;
-    resize: vertical;
+#cForm small {
+    color: grey;
 }
 
-#cForm button {
-    padding: .5rem 1rem;
-    border: none;
-    background-color: linear-gradient(rgb(98, 168, 226), rgb(26, 91, 145));
-    color: rgb(91, 155, 250);
-    cursor: pointer;
-}
-
-#cForm button:hover {
-    background-image: linear-gradient(rgb(218, 76, 25), rgb(145, 41, 3));
-}
- #cForm small{
-    color: gray;
- }
-
- #cForm input:valid,
- #cForm textarea:valid {
+#cForm input:valid,
+#cForm textarea:valid {
     border: 1px solid green;
     border-bottom: 3px solid green;
     background-color: rgb(232, 240, 254);
- }
+}
 
- #cForm:invalid button{
-    background-image: linear-gradient(rgb(172, 172, 172), rgb(76, 76, 76)); 
+#cForm:invalid button {
+    background-image: linear-gradient(rgb(172, 172, 172), rgb(76, 76, 76));
     pointer-events: none;
- }
+}
 
- nav.contacts{
+nav.contacts {
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding-bottom: 2rem;
- }
+    padding-bottom: 1.5rem;
+}
 
- nav.contacts a {
+nav.contacts a {
     font-size: 4rem;
 }
 
@@ -96,4 +65,3 @@ nav.contacts i[class~=fa-square-github] {
 nav.contacts i[class~=fa-square-instagram] {
     color: #405de6;
 }
-            

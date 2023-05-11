@@ -59,6 +59,25 @@ function myApp() {
 
     onstorage = popUpOpen
 
+    // Aviso de cookies → Exibir aviso.
+    if (cookie.get('acceptCookies') == 'on') $('#aboutCookies').hide()
+    else $('#aboutCookies').show()
+
+    /**
+         * Aviso de cookies → Políticas de privacidade.
+         **/
+    $('#policies').click(() => {
+        loadpage('policies')
+    })
+
+    /**
+     * Aviso de cookies → Aceito.
+     **/
+    $('#accept').click(() => {
+        cookie.set('acceptCookies', 'on', 365)
+        $('#aboutCookies').hide()
+    })
+
     // Monitora status de autenticação do usuário
     firebase.auth().onAuthStateChanged((user) => {
 
@@ -109,7 +128,7 @@ function myApp() {
     /**
      * Quando clicar em um artigo.
      **/
-    $(document).on('click', '.art-item', loadArticle)
+    $(document).on('click', '.article', loadArticle)
 
 }
 
@@ -370,14 +389,14 @@ function popUp(params) {
     x.localStorage.setItem('popUp', JSON.stringify(params));
     x.close()
 }
-
+// Função que abre um PopUp
 function popUpOpen() {
 
     if (localStorage.popUp) {
 
         const pData = JSON.parse(localStorage.popUp)
         var pStyle = ''
-
+        // Determina estilo de cores do PopUp
         switch (pData.type) {
             case 'error': pStyle = 'background-color: #f00; color: #fff'; break
             case 'alert': pStyle = 'background-color: #ff0; color: #000'; break
@@ -425,5 +444,87 @@ const myDate = {
         const today = new Date()
         return today.toISOString().replace('T', ' ').split('.')[0]
     }
+
+}
+String.prototype.truncate = String.prototype.truncate ||
+    function (n, useWordBoundary) {
+        if (this.length <= n) { return this; }
+        const subString = this.slice(0, n - 1);
+        return (useWordBoundary
+            ? subString.slice(0, subString.lastIndexOf(" "))
+            : subString) + "&hellip;";
+    };
+
+Object.defineProperty(String.prototype, 'capitalize', {
+    value: function () {
+        return this.charAt(0).toUpperCase() + this.slice(1);
+    },
+    enumerable: false
+});
+
+const cookie = {
+    set: (cname, cvalue, exdays) => {
+
+        const d = new Date()
+        // Determina o "tempo de vida" do cookies no cache.
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000))
+        let expires = 'expires=' + d.toUTCString()
+        document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
+    },
+
+    get: (cname) => {
+        let name = cname + '='
+        let decodedCookie = decodeURIComponent(document.cookie)
+        let ca = decodedCookie.split(';')
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i]
+            while (c.charAt(0) == ' ') c = c.substring(1)
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length)
+        }
+        return ''
+    }
+}
+function getUsersTeam(limit) {
+    var htmlOut = ''
+    $.get(app.apiBaseURL + 'users', {
+        status: 'on',
+        _sort: 'name',
+        _order: 'asc'
+    })
+        .done((data) => {
+            data.forEach((item) => {
+                var type
+                switch (item.type) {
+                    case 'admin': type = 'Administrador(a)'; break
+                    case 'author': type = 'Autor(a)'; break
+                    case 'moderator': type = 'Moderador(a)'; break
+                    default: type = 'Colaborador(a)'
+                }
+
+                htmlOut += `
+                    <div class="userclick users-grid-item" data-id="${item.id}">
+                        <img src="${item.photo}" alt="${item.name}">
+                        <h4>${item.name.split(' ')[0]}</h4>
+                        <small>${item.name}</small>
+                        <ul>
+                            <li>${getAge(item.birth)} anos</li>
+                            <li>${type}
+                        </ul>
+                    </div>
+                `
+            })
+
+            $('#usersGrid').html(htmlOut)
+
+            $('.userclick').click(openProfile)
+
+        })
+
+}
+function openProfile() {
+
+    const userId = parseInt($(this).attr('data-id'))
+    sessionStorage.userId = userId
+    loadpage('aboutus')
 
 }
