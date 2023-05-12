@@ -71,6 +71,15 @@
       "date": "2023-05-10 22:38:51",
       "status": "received",
       "id": 8
+    },
+    {
+      "name": "joao cantel",
+      "email": "joaobcantel10@gmail.com",
+      "subject": "congratulations",
+      "message": "urubu do pix",
+      "date": "2023-05-11 22:02:02",
+      "status": "received",
+      "id": 9
     }
   ],
   "users": [
@@ -128,7 +137,7 @@
       "thumbnail": "https://picsum.photos/200",
       "resume": "Aprenda a fazer alguma coisa que deve ser feita por quem sabe.",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus justo nibh, sed rutrum neque feugiat ac.",
-      "views": "15",
+      "views": "22",
       "status": "on",
       "id": 1
     },
@@ -139,7 +148,7 @@
       "thumbnail": "https://picsum.photos/201",
       "resume": "Desde que se sabe, é assim que é, para sempre ser.",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus justo nibh, sed rutrum neque feugiat ac.",
-      "views": "24",
+      "views": "45",
       "status": "on",
       "id": 2
     },
@@ -150,7 +159,7 @@
       "thumbnail": "https://picsum.photos/203",
       "resume": "Quem é nunca deixa de é.",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus justo nibh, sed rutrum neque feugiat ac.",
-      "views": "5",
+      "views": "16",
       "status": "on",
       "id": 4
     },
@@ -161,7 +170,7 @@
       "thumbnail": "https://picsum.photos/204",
       "resume": "Palmeiras não tem mundial.",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus justo nibh, sed rutrum neque feugiat ac.",
-      "views": "4",
+      "views": "10",
       "status": "on",
       "id": 3
     }
@@ -309,6 +318,61 @@
       "date": "2023-05-10 22:39:03",
       "status": "on",
       "id": 13
+    },
+    {
+      "name": "joao cantel",
+      "photo": "https://lh3.googleusercontent.com/a/AGNmyxYcYlfeTRTauZLVfMQ9Oc_80zVFRnBgO0bL_wPA=s96-c",
+      "email": "joaobcantel10@gmail.com",
+      "uid": "hHI8j0muf9P6ubZzxFcrP951PUu1",
+      "article": "2",
+      "content": "pindamonhangaba",
+      "date": "2023-05-11 21:21:26",
+      "status": "on",
+      "id": 14
+    },
+    {
+      "name": "joao cantel",
+      "photo": "https://lh3.googleusercontent.com/a/AGNmyxYcYlfeTRTauZLVfMQ9Oc_80zVFRnBgO0bL_wPA=s96-c",
+      "email": "joaobcantel10@gmail.com",
+      "uid": "hHI8j0muf9P6ubZzxFcrP951PUu1",
+      "article": "4",
+      "content": "Comentário fake para testes",
+      "date": "2023-05-11 22:01:31",
+      "status": "on",
+      "id": 15
+    },
+    {
+      "name": "joao cantel",
+      "photo": "https://lh3.googleusercontent.com/a/AGNmyxYcYlfeTRTauZLVfMQ9Oc_80zVFRnBgO0bL_wPA=s96-c",
+      "email": "joaobcantel10@gmail.com",
+      "uid": "hHI8j0muf9P6ubZzxFcrP951PUu1",
+      "article": "4",
+      "content": "olaaaaaaaaaaaaaaaaaa",
+      "date": "2023-05-11 22:01:42",
+      "status": "on",
+      "id": 16
+    },
+    {
+      "name": "joao cantel",
+      "photo": "https://lh3.googleusercontent.com/a/AGNmyxYcYlfeTRTauZLVfMQ9Oc_80zVFRnBgO0bL_wPA=s96-c",
+      "email": "joaobcantel10@gmail.com",
+      "uid": "hHI8j0muf9P6ubZzxFcrP951PUu1",
+      "article": "3",
+      "content": "pindamonhangaba da goiaba",
+      "date": "2023-05-11 22:06:44",
+      "status": "on",
+      "id": 17
+    },
+    {
+      "name": "joao cantel",
+      "photo": "https://lh3.googleusercontent.com/a/AGNmyxYcYlfeTRTauZLVfMQ9Oc_80zVFRnBgO0bL_wPA=s96-c",
+      "email": "joaobcantel10@gmail.com",
+      "uid": "hHI8j0muf9P6ubZzxFcrP951PUu1",
+      "article": "5",
+      "content": "partiu",
+      "date": "2023-05-11 23:14:40",
+      "status": "on",
+      "id": 18
     }
   ]
 }

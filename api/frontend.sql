@@ -99,6 +99,7 @@ INSERT INTO users (
     user_bio,
     user_birth,
     user_type
+    -- Valores wue serão inseridos.
 ) VALUES (
     'Joca da Silva',
     'joca@silva.com',
@@ -127,6 +128,7 @@ INSERT INTO users (
     user_name,
     user_email,
     user_password
+     -- Valores wue serão inseridos.
 ) VALUES (
     'Hermenilda',
     'herme@nilda.com',
@@ -140,6 +142,7 @@ INSERT INTO articles (
     art_thumbnail,
     art_resume,
     art_content
+     -- Valores wue serão inseridos.
 ) VALUES (
     '1',
     'Primeiro artigo da parada',
@@ -155,6 +158,7 @@ INSERT INTO articles (
     art_thumbnail,
     art_resume,
     art_content
+     -- Valores wue serão inseridos.
 ) VALUES (
     '1',
     'Segundo artigo da parada',
@@ -172,6 +176,7 @@ INSERT INTO articles (
     art_thumbnail,
     art_resume,
     art_content
+     -- Valores wue serão inseridos.
 ) VALUES (
     '1',
     'Mais um artigo para o blog',

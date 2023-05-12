@@ -29,9 +29,9 @@
 const app = {
     siteName: 'FrontEnd',
     siteSlogan: 'Programando o futuro',
-    apiBaseURL: 'http://localhost:3000/'
+   // apiBaseURL: 'http://localhost/'
+   apiBaseURL:'https://meu-frontend-api.onrender.com/'
 }
-
 /**
  * jQuery → Quando o documento estiver pronto, executa a função principal,
  * 'runApp()'.

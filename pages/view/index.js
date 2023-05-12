@@ -85,7 +85,7 @@ function getAuthorArticles(artData, limit) {
                 var output = '<h3><i class="fa-solid fa-plus fa-fw"></i> Artigos</h3><ul>'
                 var rndData = artsData.sort(() => Math.random() - 0.5)
                 rndData.forEach((artItem) => {
-                    output += `<li class="art-item" data-id="${artItem.id}">${artItem.title}</li>`
+                    output += `<li class="article art-item" data-id="${artItem.id}">${artItem.title}</li>`
                 });
                 output += '</ul>'
                 $('#authorArtcicles').html(output)
